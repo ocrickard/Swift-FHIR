@@ -42,7 +42,7 @@ class SubscriptionTests: XCTestCase {
 		
 		XCTAssertEqual(inst.channel?.endpoint?.absoluteString, "https://biliwatch.com/customers/mount-auburn-miu/on-result")
 		XCTAssertEqual(inst.channel?.header?[0], "Authorization: Bearer secret-token-abc-123")
-		XCTAssertEqual(inst.channel?.payload, "application/fhir+json")
+		XCTAssertEqual(inst.channel?.payload, "application/json+fhir")
 		XCTAssertEqual(inst.channel?.type, SubscriptionChannelType(rawValue: "rest-hook")!)
 		XCTAssertEqual(inst.contact?[0].system, ContactPointSystem(rawValue: "phone")!)
 		XCTAssertEqual(inst.contact?[0].value, "ext 4123")
@@ -77,7 +77,7 @@ class SubscriptionTests: XCTestCase {
 		
 		XCTAssertEqual(inst.channel?.endpoint?.absoluteString, "https://biliwatch.com/customers/mount-auburn-miu/on-result")
 		XCTAssertEqual(inst.channel?.header?[0], "Authorization: Bearer secret-token-abc-123")
-		XCTAssertEqual(inst.channel?.payload, "application/fhir+json")
+		XCTAssertEqual(inst.channel?.payload, "application/json+fhir")
 		XCTAssertEqual(inst.channel?.type, SubscriptionChannelType(rawValue: "rest-hook")!)
 		XCTAssertEqual(inst.contact?[0].system, ContactPointSystem(rawValue: "phone")!)
 		XCTAssertEqual(inst.contact?[0].value, "ext 4123")

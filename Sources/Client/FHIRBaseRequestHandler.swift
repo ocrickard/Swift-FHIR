@@ -114,7 +114,7 @@ open class FHIRBaseRequestHandler: FHIRRequestHandler {
 Prepare and handle a request returning JSON data.
 
 JSON body data can be greated from the resource, if the receiver holds on to one. The header's content type for PUT and POST will be set to
-"application/fhir+json; charset=utf-8" no matter what.
+"application/json+fhir; charset=utf-8" no matter what.
 */
 open class FHIRJSONRequestHandler: FHIRBaseRequestHandler {
 	
@@ -133,12 +133,12 @@ open class FHIRJSONRequestHandler: FHIRBaseRequestHandler {
 	}
 	
 	override open func prepare(request: inout URLRequest) throws {
-		headers[.accept] = "application/fhir+json"
+		headers[.accept] = "application/json+fhir"
 		switch method {
 		case .PUT:
-			headers[.contentType] = "application/fhir+json; charset=utf-8"
+			headers[.contentType] = "application/json+fhir; charset=utf-8"
 		case .POST:
-			headers[.contentType] = "application/fhir+json; charset=utf-8"
+			headers[.contentType] = "application/json+fhir; charset=utf-8"
 		default:
 			break
 		}

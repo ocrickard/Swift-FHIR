@@ -40,7 +40,7 @@
 	"fhirVersion": "4.0.0",
 	"format": [
 		"application/fhir+xml",
-		"application/fhir+json"
+		"application/json+fhir"
 	],
 	"rest": [
 		{
